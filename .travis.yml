@@ -9,10 +9,10 @@ script:
   - docker run romibedi/react-test npm test -- --coverage
 
 after_success:
-  - docker build romibedi/multi-client ./client
-  - docker build romibedi/multi-nginx ./nginx
-  - docker build romibedi/multi-server ./server
-  - docker build romibedi/multi-worker ./worker
+  - docker build -t romibedi/multi-client ./client
+  - docker build -t romibedi/multi-nginx ./nginx
+  - docker build -t romibedi/multi-server ./server
+  - docker build -t romibedi/multi-worker ./worker
 
   #log in to the docker cli
   - echo $DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
