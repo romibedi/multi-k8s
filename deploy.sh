@@ -10,7 +10,7 @@ docker push romibedi/multi-client:$SHA
 docker push romibedi/multi-server:$SHA
 docker push romibedi/multi-worker:$SHA
 
-kubectl apply -f k8ss
+kubectl apply -f k8s
 
 kubectl set image deployments/server-deployment server=romibedi/multi-server:$SHA  
 kubectl set image deployments/client-deployment client=romibedi/multi-client:$SHA  
